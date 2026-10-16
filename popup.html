@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Naukri Profile Helper</title>
+<style>
+body{font:14px/1.45 Arial,sans-serif;width:330px;padding:14px;color:#222}h1{font-size:17px;margin:0 0 12px}
+label{display:block;margin:10px 0 5px}select,button{box-sizing:border-box;width:100%;padding:9px;margin:5px 0}
+.check{display:flex;gap:8px;align-items:flex-start}.check input{margin-top:3px}
+#status{padding:8px;background:#f2f4f7;border-radius:6px;overflow-wrap:anywhere}#log{max-height:190px;overflow:auto;padding-left:20px;font-size:12px}
+small{color:#666}
+</style></head><body>
+<h1>Naukri Profile Helper</h1>
+<label for="interval">Run interval</label>
+<select id="interval"><option value="1">Every 1 hour</option><option value="3">Every 3 hours</option><option value="6">Every 6 hours</option><option value="12">Every 12 hours</option><option value="24">Once daily (24 hours)</option></select>
+<label class="check"><input type="checkbox" id="enabled"><span>Enable scheduled runs</span></label>
+<label class="check"><input type="checkbox" id="autoClickSave"><span>Open edit popup and click Save automatically</span></label>
+<button id="save">Save settings</button><button id="run">Run Now</button>
+<div id="status" role="status">Connecting…</div><h2 style="font-size:14px">Activity log</h2><ul id="log"></ul>
+<small>Save click does not guarantee Naukri accepted an update. Check the profile timestamp and any on-page confirmation.</small>
+<script src="popup.js"></script></body></html>

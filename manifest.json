@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "Naukri Profile Update Helper",
+  "version": "1.2.0",
+  "description": "Opens your Naukri profile, opens the basic-details editor, and attempts to save it.",
+  "permissions": [
+    "alarms",
+    "storage",
+    "tabs",
+    "notifications"
+  ],
+  "host_permissions": [
+    "https://www.naukri.com/*",
+    "https://*.naukri.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Naukri Profile Helper",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.naukri.com/*",
+        "https://*.naukri.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
